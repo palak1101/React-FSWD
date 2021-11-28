@@ -1,3 +1,5 @@
+import ListItem from './ListItem'
+
 const Content = () => {
 
     const chores = ["Item 1", "Item 2", "Item 3", "Item 4"]
@@ -5,9 +7,11 @@ const Content = () => {
     return (
         <div className="container">
             <ul>
-                {
-                    chores.map(chore => <li>{chore}</li>)
-                }
+
+               {
+                   chores.map(chore => <ListItem chore={chore} />)
+               }
+
             </ul>
         </div>
     );
