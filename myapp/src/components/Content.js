@@ -1,18 +1,23 @@
-import ListItem from './ListItem'
+//import ListItem from './ListItem'
+import {useState} from 'react'
 
 const Content = () => {
 
-    const chores = ["Item 1", "Item 2", "Item 3", "Item 4"]
+    const [counter, setCounter] = useState(0)
+    // console.log(counter)
+    // console.log(mysteryfunction)
 
     return (
         <div className="container">
-            <ul>
-
-               {
-                   chores.map(chore => <ListItem chore={chore} />)
-               }
-
-            </ul>
+            <h2>{counter}</h2>
+            <button onClick={() => {
+                // counter = counter + 1
+                // console.log(counter)
+                setCounter(previousValue => {
+                    console.log(previousValue)
+                    return previousValue+1
+                })
+            }}>Click Me!</button>
         </div>
     );
 }
