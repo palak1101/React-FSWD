@@ -1,19 +1,14 @@
-import Navbar from "./layouts/Navbar";
-import Footer from "./layouts/Footer";
-import Content from "./components/Content";
-
+import {useState} from 'react'
+import ChildOne from "./components/childOne";
 
 const App = () =>  {
 
+  const [data, setData] = useState([{name: "Apple"}, {name: "Samsung"}, {name: "Nokia"}])
+
   return (
     <div className="App">
-     
-      <Navbar />
-
-      <Content />
-
-      <Footer />
-      
+      <h1 style={{color: "red"}}>I'm the Parent</h1>
+      <ChildOne data={data} />
     </div>
   );
 
