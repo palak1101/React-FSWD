@@ -1,12 +1,12 @@
-import Description from "./components/Description";
+
+import One from './components/One';
 
 
 const App = () =>  {
-
   
   return (
     <div className="App">
-      <Description heading={'Mercedes S-Class'} />
+      <One />
     </div>
   );
 
