@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 const Two = () =>  {
     
-    const state = useSelector(state => state)
+    const state = useSelector(state => state.products)
     console.log(state)
     
     return (
