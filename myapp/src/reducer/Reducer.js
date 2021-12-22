@@ -7,9 +7,13 @@
 
 
 const Reducer = (state = {}, action)=>{
-    switch (action.type){
-        case 'ADD_DATA':
-            return [...state, action.payload]
+    const {type, payload} = action
+    switch (type){
+        case 'ADD_PRODUCT':
+            const {products} = state
+            console.log(action)
+            return {...state, products: [...products, payload]}
+
         default:
             return state
     }
