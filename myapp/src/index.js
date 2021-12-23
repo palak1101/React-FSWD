@@ -2,33 +2,39 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {createStore} from 'redux';
+import { createStore } from 'redux';
 import Reducer from './reducer/Reducer';
-import {Provider} from 'react-redux';
-import {composeWithDevTools} from 'redux-devtools-extension';
+import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { BrowserRouter } from 'react-router-dom';
 
 
-const chores = [
+const PRODUCTS = [
   {
     id: 1,
-    text:"Take the medicine"
+    name: "iPhone 11",
+    description: "This is information about iPhone 11"
   },
   {
     id: 2,
-    text:"Eat dinner"
+    name: "iPhone 12",
+    description: "This is information about iPhone 12"
   },
   {
-    id: 3,
-    text:"Sleep"
+    id: 1,
+    name: "iphone 13",
+    description: "This is information about iPhone 11"
   }
 ]
 
-const store = createStore(Reducer, chores, composeWithDevTools())
+const store = createStore(Reducer, PRODUCTS, composeWithDevTools())
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
