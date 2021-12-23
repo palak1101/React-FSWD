@@ -1,18 +1,12 @@
-// const initialState = [
-//     {password: 'acnikjf'},
-//     {password: 'something'},
-//     {password: 'dnbj56'}
-// ]
-
-
 
 const Reducer = (state = {}, action)=>{
     const {type, payload} = action
     switch (type){
-        case 'ADD_PRODUCT':
-            const {products} = state
-            console.log(action)
-            return {...state, products: [...products, payload]}
+        case 'DELETE_ITEM':
+            return state.filter(item => item.id !== payload)
+
+        case 'ADD_ITEM':
+            return [...state, payload]
 
         default:
             return state
